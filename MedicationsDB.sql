@@ -34,5 +34,5 @@ INSERT INTO Dosage VALUES(40);
 
 SELECT * FROM MedicationName, Dosage;
 
-DROP TABLE "MedicationName"
-DROP TABLE "Dosage"
+DROP TABLE MedicationName
+DROP TABLE Dosage
