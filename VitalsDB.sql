@@ -44,6 +44,6 @@ INSERT INTO Pulse VALUES(76,90);
 
 SELECT * FROM BP, Temperature, Pulse;
 
-DROP TABLE "BP"
-DROP TABLE "Tempterature"
-DROP TABLE "Pulse"
+DROP TABLE BP
+DROP TABLE Temperature
+DROP TABLE Pulse
