@@ -27,4 +27,4 @@ INSERT INTO PharmacyName VALUES('CVS');
 
 SELECT * FROM PharmacyName;
 
-DROP TABLE "Pharmacy"
+DROP TABLE Pharmacy
