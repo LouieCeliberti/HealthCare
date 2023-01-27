@@ -39,7 +39,7 @@ mycursor.execute("INSERT INTO MedicationName VALUES('Sodium Bicarbonate');")
 
 option = input("Enter medication name to find medication: ")
 
-mycursor.execute("SELECT name from MedicationName where dept_name = '" + option + "';")
+mycursor.execute("SELECT * FROM MedicationName, Dosage;")
 
 myresult = mycursor.fetchall()
 
