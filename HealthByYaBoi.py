@@ -3,7 +3,7 @@
 #https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html
 
 
-#Simple program to create a database with one relation and to find the Medications, Pharmacies in a Database. As well as store patient vitals.
+#Simple program to create a database with one relation and to retrieve Medications, Pharmacies in a Database. As well as store patient vitals.
 
 
 
