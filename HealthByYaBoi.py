@@ -27,15 +27,19 @@ mycursor.execute("drop database if exists university1")
 mycursor.execute("create database university1")
 mycursor.execute("use university1")
 mycursor.execute("create table instructor (ID varchar(5), name varchar(20), dept_name varchar(20), primary key (ID));")
-mycursor.execute("insert into instructor values ('1', 'Tian Tian', 'CS');")
-mycursor.execute("insert into instructor values ('2', 'Marvin Bishop', 'Math');")
-mycursor.execute("insert into instructor values ('3', 'Kashifuddin Qazi', 'CS');")
-mycursor.execute("insert into instructor values ('4', 'Sr. Joan', 'Math');")
+mycursor.execute("INSERT INTO MedicationName VALUES('Mychophenolate');")
+mycursor.execute("INSERT INTO MedicationName VALUES('Cyclosporine');")
+mycursor.execute("INSERT INTO MedicationName VALUES('Prednisone');")
+mycursor.execute("INSERT INTO MedicationName VALUES('Clonodine');")
+mycursor.execute("INSERT INTO MedicationName VALUES('Niphedimine');")
+mycursor.execute("INSERT INTO MedicationName VALUES('Glycopyrolate');")
+mycursor.execute("INSERT INTO MedicationName VALUES('Pantoprezol');")
+mycursor.execute("INSERT INTO MedicationName VALUES('Sodium Bicarbonate');")
 
 
-option = input("Enter department name to find instructors: ")
+option = input("Enter medication name to find medication: ")
 
-mycursor.execute("SELECT name from instructor where dept_name = '" + option + "';")
+mycursor.execute("SELECT name from MedicationName where dept_name = '" + option + "';")
 
 myresult = mycursor.fetchall()
 
