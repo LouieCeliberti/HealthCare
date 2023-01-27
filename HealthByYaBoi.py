@@ -23,19 +23,6 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-mycursor.execute("drop database if exists university1")
-mycursor.execute("create database university1")
-mycursor.execute("use university1")
-mycursor.execute("create table instructor (ID varchar(5), name varchar(20), dept_name varchar(20), primary key (ID));")
-mycursor.execute("INSERT INTO MedicationName VALUES('Mychophenolate');")
-mycursor.execute("INSERT INTO MedicationName VALUES('Cyclosporine');")
-mycursor.execute("INSERT INTO MedicationName VALUES('Prednisone');")
-mycursor.execute("INSERT INTO MedicationName VALUES('Clonodine');")
-mycursor.execute("INSERT INTO MedicationName VALUES('Niphedimine');")
-mycursor.execute("INSERT INTO MedicationName VALUES('Glycopyrolate');")
-mycursor.execute("INSERT INTO MedicationName VALUES('Pantoprezol');")
-mycursor.execute("INSERT INTO MedicationName VALUES('Sodium Bicarbonate');")
-
 
 option = input("Enter medication name to find medication: ")
 
