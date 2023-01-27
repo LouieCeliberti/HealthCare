@@ -46,7 +46,7 @@ myresult = mycursor.fetchall()
 
 if mycursor.rowcount == 0:
 
-  print('No instructors found')
+  print('Medication name not found')
 
 else:
 
