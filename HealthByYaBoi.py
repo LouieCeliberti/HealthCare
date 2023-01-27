@@ -26,7 +26,7 @@ mycursor = mydb.cursor()
 
 option = input("Enter medication name to find medication: ")
 
-mycursor.execute("SELECT * FROM MedicationName, Dosage;")
+mycursor.execute("SELECT", option, "FROM MedicationName;")
 
 myresult = mycursor.fetchall()
 
