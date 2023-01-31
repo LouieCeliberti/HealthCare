@@ -7,10 +7,44 @@
 
 
 
-import mysql.connector
+#import mysql.connector
+
+import psycopg2
+
+hostname='localhost'
+database='Medication'
+username='postgres'
+password='****'
+port_id = 5432
+
+try:
+    conn = psycopg2.connect(
+                            host=hostname,
+                            dbname=database,
+                            user = username,
+                            pwd=password,
+                            port = port_id)
+
+    cur = conn.cursor()
 
 
-mydb = mysql.connector.connect(
+    #option = input("Enter medication name to find medication: ")
+
+    cur.execute('SELECT * FROM MedicationName;')
+    print(cur.fetchall())
+
+    conn.commit()
+
+except Exception as error:
+        print(error)
+finally:
+    if cur is not None:
+        cur.close()
+    if conn is not None:
+        conn.close()
+
+
+"""mydb = mysql.connector.connect(
 
   host="127.0.0.1",
 
@@ -18,29 +52,4 @@ mydb = mysql.connector.connect(
 
   password="Lc654321" 
 
-) #provide your own password instead of admin
-
-
-mycursor = mydb.cursor()
-
-
-option = input("Enter medication name to find medication: ")
-
-mycursor.execute("SELECT", option, "FROM MedicationName;")
-
-myresult = mycursor.fetchall()
-
-
-if mycursor.rowcount == 0:
-
-  print('Medication name not found')
-
-else:
-
-  for x in myresult:
-
-    print(x[0])
-
-mycursor.close()
-
-mydb.close()
+)"""
