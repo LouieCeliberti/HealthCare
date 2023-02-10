@@ -11,45 +11,30 @@
 
 import psycopg2
 
-hostname='localhost'
-database='Medication'
-username='postgres'
-password='****'
-port_id = 5432
+#establishing the connection
+conn = psycopg2.connect(
+   database="Medication", user='postgres', password='pswd', host='127.0.0.1', port= '5432'
+)
 
-try:
-    conn = psycopg2.connect(
-                            host=hostname,
-                            dbname=database,
-                            user = username,
-                            pwd=password,
-                            port = port_id)
+#Setting auto commit false
+conn.autocommit = True
 
-    cur = conn.cursor()
+#Creating a cursor object using the cursor() method
+cursor = conn.cursor()
 
+#Retrieving data
+cursor.execute('''SELECT * from MedicationName''')
 
-    #option = input("Enter medication name to find medication: ")
+#Fetching 1st row from the table
+result = cursor.fetchone();
+print(result)
 
-    cur.execute('SELECT * FROM MedicationName;')
-    print(cur.fetchall())
+#Fetching 1st row from the table
+result = cursor.fetchall();
+print(result)
 
-    conn.commit()
+#Commit your changes in the database
+conn.commit()
 
-except Exception as error:
-        print(error)
-finally:
-    if cur is not None:
-        cur.close()
-    if conn is not None:
-        conn.close()
-
-
-"""mydb = mysql.connector.connect(
-
-  host="127.0.0.1",
-
-  user="root",
-
-  password="Lc654321" 
-
-)"""
+#Closing the connection
+conn.close()
